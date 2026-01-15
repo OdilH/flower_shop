@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Букеты & цветы - доставка авторских цветочных композиций по Москве. Букеты, композиции, свадебная флористика.">
+    <meta name="keywords" content="доставка цветов, букеты, цветы москва, Букеты & цветы">
+    <title>Букеты & цветы - Доставка цветов по Москве</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- Шрифты Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="icon" href="assets/img/favicon.ico">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Логотип -->
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Главная</a></li>
+                        <li class="has-dropdown">
+                            <a href="catalog.html">Каталог</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="catalog.html?category=bouquets">Букеты</a></li>
+                                <li><a href="catalog.html?category=baskets">Цветы в корзине</a></li>
+                                <li><a href="catalog.html?category=artbox">Цветы в Art-Box</a></li>
+                                <li><a href="catalog.html?category=compositions">Композиции</a></li>
+                                <li><a href="catalog.html?category=exclusive">Exclusive</a></li>
+                                <li><a href="catalog.html?category=wedding">Свадьба</a></li>
+                                <li><a href="catalog.html?category=gifts">Подарки</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Контакты и корзина -->
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
+                        <span class="header__hours">Работаем: 9:00 - 21:00</span>
+                    </div>
+
+                    <div class="header__account">
+                        <a href="account.html" class="account-link" title="Личный кабинет">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="header__cart">
+                        <a href="cart.html" class="cart-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 21H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4m7 14h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4M9 3v6m6-6v6M9 9h6" />
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+
+                    <!-- Бургер меню -->
+                    <button class="burger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO СЕКЦИЯ -->
+    <section class="hero">
+        <div class="hero__slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hero__slide" style="background-image: url('assets/img/banners/hero-1.png');">
+                        <div class="container">
+                            <div class="hero__content" data-aos="fade-up">
+                                <h1 class="hero__title">Авторские цветочные композиции</h1>
+                                <p class="hero__subtitle">Созданные чемпионами России по флористике</p>
+                                <a href="catalog.html" class="btn btn-primary btn-large">Смотреть каталог</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hero__slide" style="background-image: url('assets/img/banners/hero-1.png');">
+                        <div class="container">
+                            <div class="hero__content" data-aos="fade-up">
+                                <h1 class="hero__title">Доставка по Москве</h1>
+                                <p class="hero__subtitle">Быстро, свежо, красиво</p>
+                                <a href="catalog.html" class="btn btn-primary btn-large">Заказать букет</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section class="advantages section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Почему выбирают нас</h2>
+            </div>
+
+            <div class="row">
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Быстрая доставка</h3>
+                        <p class="advantage-card__text">Доставка по Москве в течение 2-3 часов</p>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Свежие цветы</h3>
+                        <p class="advantage-card__text">Только свежие цветы премиум качества</p>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 12l2 2 4-4" />
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3z" />
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Гарантия качества</h3>
+                        <p class="advantage-card__text">Гарантируем свежесть и красоту букетов</p>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Доступные цены</h3>
+                        <p class="advantage-card__text">Широкий выбор букетов на любой бюджет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КАТАЛОГ ТОВАРОВ (Популярные) -->
+    <section class="catalog section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Популярные букеты</h2>
+                <p>Выберите идеальный букет для вашего особенного момента</p>
+            </div>
+
+            <div class="row" id="products-container">
+                <!-- Товары будут загружены через JavaScript -->
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-1.png" alt="Букет роз">
+                            <span class="product-card__badge">Хит</span>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Букет из 25 роз</h3>
+                            <p class="product-card__description">Красные розы премиум класса</p>
+                            <div class="product-card__price">2 500 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(1, 'Букет из 25 роз', 2500, 'assets/img/products/product-1.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-2.png" alt="Букет тюльпанов">
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Букет тюльпанов</h3>
+                            <p class="product-card__description">Яркие весенние тюльпаны</p>
+                            <div class="product-card__price">1 800 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(2, 'Букет тюльпанов', 1800, 'assets/img/products/product-2.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-3.png" alt="Свадебный букет">
+                            <span class="product-card__badge">Новинка</span>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Свадебный букет</h3>
+                            <p class="product-card__description">Нежный белый букет для невесты</p>
+                            <div class="product-card__price">3 500 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(3, 'Свадебный букет', 3500, 'assets/img/products/product-3.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-4.png" alt="Композиция в корзине">
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Композиция в корзине</h3>
+                            <p class="product-card__description">Смешанный букет в плетеной корзине</p>
+                            <div class="product-card__price">2 200 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(4, 'Композиция в корзине', 2200, 'assets/img/products/product-4.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-5.png" alt="Букет пионов">
+                            <span class="product-card__badge">Новинка</span>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Букет пионов</h3>
+                            <p class="product-card__description">Нежные розовые пионы</p>
+                            <div class="product-card__price">4 200 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(5, 'Букет пионов', 4200, 'assets/img/products/product-5.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-6.png" alt="Цветы в шляпной коробке">
+                            <span class="product-card__badge">Exclusive</span>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Цветы в шляпной коробке</h3>
+                            <p class="product-card__description">Элегантная композиция в коробке</p>
+                            <div class="product-card__price">5 500 ₽</div>
+                            <button class="btn btn-primary btn-block"
+                                onclick="addProductToCart(6, 'Цветы в шляпной коробке', 5500, 'assets/img/products/product-6.png')">В
+                                корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="catalog.html" class="btn btn-outline">Смотреть весь каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews section" style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Отзывы наших клиентов</h2>
+            </div>
+
+            <div class="reviews-slider swiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-card__rating">★★★★★</div>
+                            <p class="review-card__text">"Потрясающий букет! Цветы были свежие, доставка быстрая. Очень
+                                довольна!"</p>
+                            <div class="review-card__author">
+                                <strong>Анна М.</strong>
+                                <span>Москва</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-card__rating">★★★★★</div>
+                            <p class="review-card__text">"Заказывала свадебный букет. Превзошли все ожидания! Спасибо за
+                                красоту!"</p>
+                            <div class="review-card__author">
+                                <strong>Мария К.</strong>
+                                <span>Москва</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-card__rating">★★★★★</div>
+                            <p class="review-card__text">"Регулярно заказываю букеты. Всегда свежие цветы и отличный
+                                сервис!"</p>
+                            <div class="review-card__author">
+                                <strong>Елена В.</strong>
+                                <span>Москва</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <div class="footer__logo">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы"
+                            onerror="this.src='assets/img/logo/logo.svg'">
+                    </div>
+                    <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Навигация</h4>
+                    <ul class="footer__menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__menu">
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="guarantees.html">Гарантии</a></li>
+                        <li><a href="reviews.html">Отзывы</a></li>
+                    </ul>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li><a href="tel:+74955870707">+7 (495) 587-07-07</a></li>
+                        <li>Работаем: 9:00 - 21:00</li>
+                        <li>
+                            <a href="#" class="social-link">WhatsApp</a>
+                            <a href="#" class="social-link">Telegram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2024 Букеты & цветы. Все права защищены.</p>
+                <p><a href="privacy.html">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Инициализация Swiper для Hero
+        const heroSwiper = new Swiper('.hero__slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Инициализация Swiper для отзывов
+        const reviewsSwiper = new Swiper('.reviews-slider', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 4000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // Инициализация AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // Функция добавления товара в корзину
+        function addProductToCart(id, name, price, image) {
+            const product = {
+                id: id,
+                name: name,
+                price: price,
+                image: image
+            };
+
+            if (window.SamsonBuket && window.SamsonBuket.addToCart) {
+                window.SamsonBuket.addToCart(product);
+            } else {
+                // Fallback если main.js еще не загружен
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Товар добавлен в корзину!');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

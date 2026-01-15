@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Доставка и оплата цветов Букеты & цветы. Доставка по Москве за 2 часа. Бесплатно от 5000 рублей.">
+    <title>Доставка и оплата - Букеты & цветы</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                    </a>
+                </div>
+                
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
+                        <span class="header__hours">Работаем: 9:00 - 21:00</span>
+                    </div>
+                    
+                    <div class="header__actions">
+                        <a href="cart.html" class="header__icon cart-link" title="Корзина">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <button class="burger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- HERO -->
+    <section class="page-hero page-hero--small">
+        <div class="container">
+            <nav class="breadcrumbs breadcrumbs--light">
+                <ul class="breadcrumbs__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><span class="breadcrumbs__current">Доставка и оплата</span></li>
+                </ul>
+            </nav>
+            <h1 class="page-hero__title">Доставка и оплата</h1>
+        </div>
+    </section>
+    
+    <!-- DELIVERY INFO -->
+    <section class="delivery-info section">
+        <div class="container">
+            <div class="delivery-grid">
+                <!-- Основная информация -->
+                <div class="delivery-main" data-aos="fade-right">
+                    <h2 class="section-title">Доставка цветов по Москве</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-card__icon">🚗</div>
+                        <div class="info-card__content">
+                            <h3>Курьерская доставка</h3>
+                            <p>Доставляем букеты курьером по всей Москве и Московской области. 
+                            Наши курьеры бережно доставят ваш заказ в указанное время.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="delivery-subtitle">Стоимость доставки</h3>
+                    
+                    <div class="pricing-table">
+                        <div class="pricing-row">
+                            <span class="pricing-zone">Москва (в пределах МКАД)</span>
+                            <span class="pricing-price">500 ₽</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-zone">Москва (за МКАД, до 10 км)</span>
+                            <span class="pricing-price">700 ₽</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-zone">Московская область (10-30 км)</span>
+                            <span class="pricing-price">1000 ₽</span>
+                        </div>
+                        <div class="pricing-row pricing-row--highlight">
+                            <span class="pricing-zone">При заказе от 5000 ₽</span>
+                            <span class="pricing-price pricing-price--free">Бесплатно</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-note">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <p>Точную стоимость доставки уточняйте у менеджера при оформлении заказа</p>
+                    </div>
+                    
+                    <h3 class="delivery-subtitle">Время доставки</h3>
+                    
+                    <ul class="delivery-list">
+                        <li>
+                            <span class="delivery-list__icon">⏰</span>
+                            <div>
+                                <strong>Экспресс-доставка</strong> — от 2 часов с момента оформления заказа
+                            </div>
+                        </li>
+                        <li>
+                            <span class="delivery-list__icon">📅</span>
+                            <div>
+                                <strong>К определённому времени</strong> — доставка в выбранный вами интервал
+                            </div>
+                        </li>
+                        <li>
+                            <span class="delivery-list__icon">🌙</span>
+                            <div>
+                                <strong>Ночная доставка</strong> — возможна по предварительной договорённости
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="time-intervals">
+                        <h4>Доступные интервалы доставки:</h4>
+                        <div class="intervals-grid">
+                            <div class="interval">09:00 - 12:00</div>
+                            <div class="interval">12:00 - 15:00</div>
+                            <div class="interval">15:00 - 18:00</div>
+                            <div class="interval">18:00 - 21:00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Боковая панель -->
+                <div class="delivery-sidebar" data-aos="fade-left">
+                    <div class="sidebar-card">
+                        <h3>🎁 Самовывоз</h3>
+                        <p>Вы можете забрать заказ самостоятельно из нашего магазина.</p>
+                        <div class="sidebar-card__address">
+                            <strong>Адрес:</strong><br>
+                            г. Москва, ул. Цветочная, д. 15
+                        </div>
+                        <div class="sidebar-card__hours">
+                            <strong>Время работы:</strong><br>
+                            Ежедневно с 9:00 до 21:00
+                        </div>
+                        <p class="sidebar-card__note">При самовывозе скидка 5%</p>
+                    </div>
+                    
+                    <div class="sidebar-card sidebar-card--accent">
+                        <h3>🌸 Гарантия свежести</h3>
+                        <p>Все наши цветы проходят контроль качества. Если букет вам не понравится — мы заменим его бесплатно!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PAYMENT -->
+    <section class="payment-info section section--gray">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Способы оплаты</h2>
+            <p class="section-subtitle text-center" data-aos="fade-up">
+                Выберите удобный для вас способ
+            </p>
+            
+            <div class="payment-grid">
+                <div class="payment-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="payment-card__icon">💳</div>
+                    <h3>Банковская карта</h3>
+                    <p>Оплата онлайн картами Visa, MasterCard, МИР. Безопасно и быстро.</p>
+                    <div class="payment-card__logos">
+                        <img src="assets/img/icons/visa.svg" alt="Visa">
+                        <img src="assets/img/icons/mastercard.svg" alt="MasterCard">
+                        <img src="assets/img/icons/mir.svg" alt="МИР">
+                    </div>
+                </div>
+                
+                <div class="payment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="payment-card__icon">💵</div>
+                    <h3>Наличными</h3>
+                    <p>Оплата наличными курьеру при получении заказа или в нашем магазине.</p>
+                </div>
+                
+                <div class="payment-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="payment-card__icon">📱</div>
+                    <h3>Перевод на карту</h3>
+                    <p>СБП (Система быстрых платежей) или перевод по номеру карты.</p>
+                </div>
+                
+                <div class="payment-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="payment-card__icon">🏢</div>
+                    <h3>Безналичный расчёт</h3>
+                    <p>Для юридических лиц. Выставляем счёт, работаем с НДС.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq-section section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Частые вопросы</h2>
+            
+            <div class="faq-list" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Можно ли заказать доставку на конкретное время?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, вы можете выбрать удобный интервал доставки при оформлении заказа. 
+                        Также возможна доставка к точному времени — уточните у менеджера.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Что делать, если получателя не будет дома?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Курьер свяжется с получателем за 30-60 минут до доставки. Если получатель 
+                        недоступен, мы согласуем альтернативное время или место доставки.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Можно ли заказать доставку в другой город?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, мы сотрудничаем с партнёрами в других городах России. 
+                        Уточните возможность и стоимость доставки у менеджера.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Можно ли изменить или отменить заказ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Изменения возможны не позднее, чем за 3 часа до доставки. 
+                        Для отмены свяжитесь с нами по телефону.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как узнать, что букет доставлен?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>После вручения букета мы отправим вам SMS-уведомление. 
+                        По желанию курьер может сделать фото момента вручения.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta section section--gray">
+        <div class="container">
+            <div class="cta__content" data-aos="fade-up">
+                <h2 class="cta__title">Остались вопросы?</h2>
+                <p class="cta__text">
+                    Свяжитесь с нами — мы всегда рады помочь!
+                </p>
+                <div class="cta__buttons">
+                    <a href="tel:+74955870707" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +7 (495) 587-07-07
+                    </a>
+                    <a href="contacts.html" class="btn btn-outline btn-lg">Написать нам</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <div class="footer__logo">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                    </div>
+                    <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
+                </div>
+                
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__menu">
+                        <li><a href="catalog.html?category=bukety">Букеты</a></li>
+                        <li><a href="catalog.html?category=korziny">Корзины</a></li>
+                        <li><a href="catalog.html?category=flower-box">Flower Box</a></li>
+                        <li><a href="catalog.html?category=wedding">Свадьба</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__menu">
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li><a href="tel:+74955870707">+7 (495) 587-07-07</a></li>
+                        <li>Работаем: 9:00 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Букеты & цветы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

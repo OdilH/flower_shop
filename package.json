@@ -1,0 +1,31 @@
+﻿{
+  "name": "samson-buket",
+  "version": "1.0.0",
+  "description": "Сайт доставки цветов Букеты & цветы",
+  "main": "index.html",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "sass": "sass assets/scss:assets/css --watch",
+    "start": "live-server"
+  },
+  "keywords": [
+    "flowers",
+    "delivery",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "jquery": "^3.7.1",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
+
+

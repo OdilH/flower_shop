@@ -1,0 +1,287 @@
+/* ============================================
+   АВТОРИЗАЦИЯ - СТИЛИ
+   ============================================ */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.auth-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-header {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary), #ff6b8a);
+}
+
+.auth-logo img {
+    height: 60px;
+    filter: brightness(0) invert(1);
+}
+
+/* Табы */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 16px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.auth-tab:hover {
+    color: var(--color-primary);
+}
+
+.auth-tab.active {
+    color: var(--color-primary);
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-primary);
+}
+
+/* Формы */
+.auth-form {
+    display: none;
+    padding: var(--spacing-lg);
+}
+
+.auth-form.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--color-bg-light);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-input::placeholder {
+    color: #aaa;
+}
+
+/* Поле пароля */
+.password-input {
+    position: relative;
+}
+
+.password-input .form-input {
+    padding-right: 50px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.password-toggle:hover {
+    color: var(--color-primary);
+}
+
+/* Чекбокс */
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9375rem;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-text-light);
+    border-radius: 4px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.checkbox input:checked+.checkmark {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.checkbox input:checked+.checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+}
+
+.checkbox a {
+    color: var(--color-primary);
+}
+
+/* Строки формы */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-row--between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Ссылки */
+.auth-link {
+    color: var(--color-primary);
+    font-size: 0.875rem;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Кнопки */
+.btn-lg {
+    padding: 16px 30px;
+    font-size: 1.125rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Сообщения */
+.auth-message {
+    margin-top: var(--spacing-md);
+    padding: 12px 15px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    display: none;
+}
+
+.auth-message.show {
+    display: block;
+}
+
+.auth-message.success {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.auth-message.error {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+/* Футер */
+.auth-footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-bg-light);
+}
+
+.auth-back {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+}
+
+.auth-back:hover {
+    color: var(--color-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 10px;
+    }
+
+    .auth-card {
+        border-radius: var(--radius-md);
+    }
+
+    .auth-form {
+        padding: var(--spacing-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row--between {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}

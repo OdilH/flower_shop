@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EDE7F6"/>
+      <stop offset="100%" style="stop-color:#D1C4E9"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD54F"/>
+      <stop offset="100%" style="stop-color:#FFA000"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg6)"/>
+  
+  <!-- Gold accents -->
+  <circle cx="50" cy="50" r="4" fill="url(#gold)"/>
+  <circle cx="350" cy="60" r="3" fill="url(#gold)"/>
+  <circle cx="70" cy="350" r="3" fill="url(#gold)"/>
+  <circle cx="330" cy="340" r="4" fill="url(#gold)"/>
+  
+  <g transform="translate(200, 200)">
+    <!-- Luxury wrapper -->
+    <path d="M-60 70 Q-75 115 -45 140 L45 140 Q75 115 60 70 Q30 85 0 80 Q-30 85 -60 70" fill="#7E57C2" stroke="#5E35B1" stroke-width="2"/>
+    <path d="M-55 75 Q-65 110 -40 130 L40 130 Q65 110 55 75" fill="none" stroke="url(#gold)" stroke-width="2"/>
+    
+    <!-- Stems -->
+    <path d="M-20 50 Q-25 90 -15 130" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <path d="M0 45 Q0 90 5 130" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <path d="M20 50 Q25 90 15 130" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    
+    <!-- Orchid-like exclusive flowers -->
+    <g transform="translate(-35, -20)">
+      <ellipse cx="0" cy="-15" rx="12" ry="18" fill="#9575CD"/>
+      <ellipse cx="12" cy="0" rx="12" ry="18" fill="#7E57C2" transform="rotate(45)"/>
+      <ellipse cx="0" cy="15" rx="12" ry="18" fill="#9575CD" transform="rotate(90)"/>
+      <ellipse cx="-12" cy="0" rx="12" ry="18" fill="#7E57C2" transform="rotate(135)"/>
+      <circle cx="0" cy="0" r="8" fill="#FFD54F"/>
+      <circle cx="0" cy="0" r="4" fill="#FFA000"/>
+    </g>
+    
+    <g transform="translate(30, -35)">
+      <ellipse cx="0" cy="-12" rx="10" ry="15" fill="#B39DDB"/>
+      <ellipse cx="10" cy="0" rx="10" ry="15" fill="#9575CD" transform="rotate(45)"/>
+      <ellipse cx="0" cy="12" rx="10" ry="15" fill="#B39DDB" transform="rotate(90)"/>
+      <ellipse cx="-10" cy="0" rx="10" ry="15" fill="#9575CD" transform="rotate(135)"/>
+      <circle cx="0" cy="0" r="6" fill="#FFD54F"/>
+    </g>
+    
+    <g transform="translate(0, -60)">
+      <ellipse cx="0" cy="-14" rx="11" ry="16" fill="#9575CD"/>
+      <ellipse cx="11" cy="0" rx="11" ry="16" fill="#7E57C2" transform="rotate(45)"/>
+      <ellipse cx="0" cy="14" rx="11" ry="16" fill="#9575CD" transform="rotate(90)"/>
+      <ellipse cx="-11" cy="0" rx="11" ry="16" fill="#7E57C2" transform="rotate(135)"/>
+      <circle cx="0" cy="0" r="7" fill="#FFD54F"/>
+    </g>
+    
+    <!-- White accent flowers -->
+    <circle cx="-50" cy="-40" r="8" fill="#FFF" stroke="#E0E0E0"/>
+    <circle cx="-50" cy="-40" r="4" fill="#FFEB3B"/>
+    <circle cx="50" cy="-50" r="7" fill="#FFF" stroke="#E0E0E0"/>
+    <circle cx="50" cy="-50" r="3" fill="#FFEB3B"/>
+    
+    <!-- Elegant leaves -->
+    <ellipse cx="-55" cy="25" rx="18" ry="6" fill="#66BB6A" transform="rotate(-30 -55 25)"/>
+    <ellipse cx="55" cy="30" rx="18" ry="6" fill="#81C784" transform="rotate(30 55 30)"/>
+    
+    <!-- Gold ribbon -->
+    <path d="M-25 130 Q0 145 25 130" stroke="url(#gold)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <text x="200" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#5E35B1">Эксклюзивный букет</text>
+</svg>
+

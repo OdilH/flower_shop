@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Личный кабинет - управление заказами и профилем">
+    <title>Личный кабинет - Букеты & цветы</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/account.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="assets/img/favicon.ico">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                    </a>
+                </div>
+
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
+                        <span class="header__hours">Работаем: 9:00 - 21:00</span>
+                    </div>
+
+                    <div class="header__cart">
+                        <a href="cart.html" class="cart-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 21H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4m7 14h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4M9 3v6m6-6v6M9 9h6" />
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+
+                    <button class="burger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs__list">
+                <li><a href="index.html">Главная</a></li>
+                <li><span class="breadcrumbs__current">Личный кабинет</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ACCOUNT PAGE -->
+    <section class="account-page">
+        <div class="container">
+            <div class="account-layout">
+
+                <!-- Sidebar -->
+                <aside class="account-sidebar">
+                    <div class="account-user">
+                        <div class="account-user__avatar">
+                            <span>ИП</span>
+                        </div>
+                        <div class="account-user__info">
+                            <h3 class="account-user__name">Иван Петров</h3>
+                            <p class="account-user__email">ivan@example.com</p>
+                        </div>
+                    </div>
+
+                    <nav class="account-menu">
+                        <a href="#orders" class="account-menu__item active" data-tab="orders">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14,2 14,8 20,8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                            Мои заказы
+                        </a>
+                        <a href="#profile" class="account-menu__item" data-tab="profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            Профиль
+                        </a>
+                        <a href="#addresses" class="account-menu__item" data-tab="addresses">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Адреса доставки
+                        </a>
+                        <a href="#favorites" class="account-menu__item" data-tab="favorites">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Избранное
+                        </a>
+                        <a href="#settings" class="account-menu__item" data-tab="settings">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                            Настройки
+                        </a>
+                        <a href="#" class="account-menu__item account-menu__item--logout" id="logoutBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                <polyline points="16 17 21 12 16 7" />
+                                <line x1="21" y1="12" x2="9" y2="12" />
+                            </svg>
+                            Выйти
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Content -->
+                <main class="account-content">
+
+                    <!-- Orders Tab -->
+                    <div class="account-tab active" id="orders">
+                        <div class="account-header">
+                            <h1 class="account-title">Мои заказы</h1>
+                        </div>
+
+                        <div class="orders-list">
+                            <!-- Order 1 -->
+                            <div class="order-card">
+                                <div class="order-card__header">
+                                    <div class="order-card__info">
+                                        <span class="order-card__number">Заказ #1024</span>
+                                        <span class="order-card__date">18 декабря 2024</span>
+                                    </div>
+                                    <div class="order-card__status order-card__status--delivered">
+                                        Доставлен
+                                    </div>
+                                </div>
+                                <div class="order-card__body">
+                                    <div class="order-card__items">
+                                        <div class="order-item">
+                                            <img src="assets/img/products/product-1.png" alt="Букет роз">
+                                            <div class="order-item__info">
+                                                <h4>Букет из 25 роз</h4>
+                                                <span>1 шт × 2 500 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-card__summary">
+                                        <div class="order-card__total">
+                                            <span>Итого:</span>
+                                            <strong>3 000 ₽</strong>
+                                        </div>
+                                        <div class="order-card__actions">
+                                            <button class="btn btn-outline btn-sm">Повторить заказ</button>
+                                            <button class="btn btn-text btn-sm">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order 2 -->
+                            <div class="order-card">
+                                <div class="order-card__header">
+                                    <div class="order-card__info">
+                                        <span class="order-card__number">Заказ #1023</span>
+                                        <span class="order-card__date">15 декабря 2024</span>
+                                    </div>
+                                    <div class="order-card__status order-card__status--processing">
+                                        В обработке
+                                    </div>
+                                </div>
+                                <div class="order-card__body">
+                                    <div class="order-card__items">
+                                        <div class="order-item">
+                                            <img src="assets/img/products/product-3.png" alt="Свадебный букет">
+                                            <div class="order-item__info">
+                                                <h4>Свадебный букет</h4>
+                                                <span>1 шт × 3 500 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="order-item">
+                                            <img src="assets/img/products/product-5.png" alt="Букет пионов">
+                                            <div class="order-item__info">
+                                                <h4>Букет пионов</h4>
+                                                <span>1 шт × 4 200 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-card__summary">
+                                        <div class="order-card__total">
+                                            <span>Итого:</span>
+                                            <strong>8 200 ₽</strong>
+                                        </div>
+                                        <div class="order-card__actions">
+                                            <button class="btn btn-outline btn-sm">Отследить</button>
+                                            <button class="btn btn-text btn-sm">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order 3 -->
+                            <div class="order-card">
+                                <div class="order-card__header">
+                                    <div class="order-card__info">
+                                        <span class="order-card__number">Заказ #1018</span>
+                                        <span class="order-card__date">10 декабря 2024</span>
+                                    </div>
+                                    <div class="order-card__status order-card__status--cancelled">
+                                        Отменён
+                                    </div>
+                                </div>
+                                <div class="order-card__body">
+                                    <div class="order-card__items">
+                                        <div class="order-item">
+                                            <img src="assets/img/products/product-2.png" alt="Букет тюльпанов">
+                                            <div class="order-item__info">
+                                                <h4>Букет тюльпанов</h4>
+                                                <span>2 шт × 1 800 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-card__summary">
+                                        <div class="order-card__total">
+                                            <span>Итого:</span>
+                                            <strong>4 100 ₽</strong>
+                                        </div>
+                                        <div class="order-card__actions">
+                                            <button class="btn btn-outline btn-sm">Повторить заказ</button>
+                                            <button class="btn btn-text btn-sm">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Tab -->
+                    <div class="account-tab" id="profile">
+                        <div class="account-header">
+                            <h1 class="account-title">Профиль</h1>
+                        </div>
+
+                        <form class="profile-form">
+                            <div class="form-section">
+                                <h3 class="form-section__title">Личные данные</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">Имя</label>
+                                        <input type="text" id="firstName" class="form-input" value="Иван">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Фамилия</label>
+                                        <input type="text" id="lastName" class="form-input" value="Петров">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Телефон</label>
+                                        <input type="tel" id="phone" class="form-input" value="+7 (999) 123-45-67">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-input" value="ivan@example.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthday">Дата рождения</label>
+                                    <input type="date" id="birthday" class="form-input" value="1990-05-15">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div class="account-tab" id="addresses">
+                        <div class="account-header">
+                            <h1 class="account-title">Адреса доставки</h1>
+                            <button class="btn btn-primary btn-sm" id="addAddressBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Добавить адрес
+                            </button>
+                        </div>
+
+                        <div class="addresses-list">
+                            <div class="address-card address-card--default">
+                                <div class="address-card__badge">Основной</div>
+                                <div class="address-card__content">
+                                    <h4>Дом</h4>
+                                    <p>г. Москва, ул. Примерная, д. 15, кв. 42</p>
+                                    <span class="address-card__phone">+7 (999) 123-45-67</span>
+                                </div>
+                                <div class="address-card__actions">
+                                    <button class="btn-icon" title="Редактировать">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn-icon btn-icon--danger" title="Удалить">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="3 6 5 6 21 6" />
+                                            <path
+                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="address-card">
+                                <div class="address-card__content">
+                                    <h4>Работа</h4>
+                                    <p>г. Москва, Бизнес-центр "Сити", Пресненская наб., д. 8</p>
+                                    <span class="address-card__phone">+7 (999) 123-45-67</span>
+                                </div>
+                                <div class="address-card__actions">
+                                    <button class="btn-icon" title="Сделать основным">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn-icon" title="Редактировать">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn-icon btn-icon--danger" title="Удалить">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="3 6 5 6 21 6" />
+                                            <path
+                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favorites Tab -->
+                    <div class="account-tab" id="favorites">
+                        <div class="account-header">
+                            <h1 class="account-title">Избранное</h1>
+                        </div>
+
+                        <div class="favorites-grid">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="assets/img/products/product-1.png" alt="Букет роз">
+                                    <button class="product-card__favorite active">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Букет из 25 роз</h3>
+                                    <div class="product-card__price">2 500 ₽</div>
+                                    <button class="btn btn-primary btn-block">В корзину</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="assets/img/products/product-5.png" alt="Букет пионов">
+                                    <button class="product-card__favorite active">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Букет пионов</h3>
+                                    <div class="product-card__price">4 200 ₽</div>
+                                    <button class="btn btn-primary btn-block">В корзину</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="assets/img/products/product-6.png" alt="Цветы в шляпной коробке">
+                                    <button class="product-card__favorite active">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Цветы в шляпной коробке</h3>
+                                    <div class="product-card__price">5 500 ₽</div>
+                                    <button class="btn btn-primary btn-block">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div class="account-tab" id="settings">
+                        <div class="account-header">
+                            <h1 class="account-title">Настройки</h1>
+                        </div>
+
+                        <div class="settings-sections">
+                            <div class="settings-section">
+                                <h3 class="settings-section__title">Уведомления</h3>
+                                <div class="settings-option">
+                                    <div class="settings-option__info">
+                                        <h4>Email-уведомления</h4>
+                                        <p>Получать информацию о заказах на email</p>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-option">
+                                    <div class="settings-option__info">
+                                        <h4>SMS-уведомления</h4>
+                                        <p>Получать SMS о статусе заказа</p>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-option">
+                                    <div class="settings-option__info">
+                                        <h4>Рассылка акций</h4>
+                                        <p>Получать информацию о скидках и акциях</p>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3 class="settings-section__title">Безопасность</h3>
+                                <div class="settings-option settings-option--button">
+                                    <div class="settings-option__info">
+                                        <h4>Изменить пароль</h4>
+                                        <p>Рекомендуем менять пароль раз в 3 месяца</p>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Изменить</button>
+                                </div>
+                            </div>
+
+                            <div class="settings-section settings-section--danger">
+                                <h3 class="settings-section__title">Опасная зона</h3>
+                                <div class="settings-option settings-option--button">
+                                    <div class="settings-option__info">
+                                        <h4>Удалить аккаунт</h4>
+                                        <p>Все данные будут безвозвратно удалены</p>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <div class="footer__logo">
+                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                    </div>
+                    <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__menu">
+                        <li><a href="catalog.html?category=bukety">Букеты</a></li>
+                        <li><a href="catalog.html?category=korziny">Корзины</a></li>
+                        <li><a href="catalog.html?category=flower-box">Flower Box</a></li>
+                        <li><a href="catalog.html?category=wedding">Свадьба</a></li>
+                    </ul>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__menu">
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li><a href="tel:+74955870707">+7 (495) 587-07-07</a></li>
+                        <li>Работаем: 9:00 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2024 Букеты & цветы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/account.js"></script>
+</body>
+
+</html>
