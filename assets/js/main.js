@@ -3,49 +3,72 @@
  */
 
 // Ждем загрузки DOM
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Инициализация всех модулей
     initMobileMenu();
     initSmoothScroll();
     initAnimations();
     initCart();
-    
+    initCookieBanner();
+
     console.log('Букеты & цветы - сайт загружен');
 });
 
 /**
- * Мобильное меню (бургер)
+ * Боковое меню (Sidebar)
  */
 function initMobileMenu() {
-    const burger = document.querySelector('.burger');
-    const menu = document.querySelector('.header__nav');
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarClose = document.getElementById('sidebarClose');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
     const body = document.body;
-    
-    if (burger && menu) {
-        burger.addEventListener('click', function() {
-            burger.classList.toggle('active');
-            menu.classList.toggle('active');
-            body.classList.toggle('menu-open');
+
+    // Функция открытия sidebar
+    function openSidebar() {
+        sidebar.classList.add('active');
+        body.classList.add('sidebar-open');
+    }
+
+    // Функция закрытия sidebar
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        body.classList.remove('sidebar-open');
+    }
+
+    // Открытие по клику на бургер
+    if (burgerBtn) {
+        burgerBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openSidebar();
         });
-        
-        // Закрытие меню при клике на ссылку
-        const menuLinks = menu.querySelectorAll('a');
+    }
+
+    // Закрытие по клику на крестик
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeSidebar);
+    }
+
+    // Закрытие по клику на overlay
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
+            closeSidebar();
+        }
+    });
+
+    // Закрытие при клике на ссылку в sidebar
+    if (sidebar) {
+        const menuLinks = sidebar.querySelectorAll('a');
         menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                burger.classList.remove('active');
-                menu.classList.remove('active');
-                body.classList.remove('menu-open');
+            link.addEventListener('click', function () {
+                setTimeout(closeSidebar, 100);
             });
-        });
-        
-        // Закрытие меню при клике вне его
-        document.addEventListener('click', function(e) {
-            if (!menu.contains(e.target) && !burger.contains(e.target)) {
-                burger.classList.remove('active');
-                menu.classList.remove('active');
-                body.classList.remove('menu-open');
-            }
         });
     }
 }
@@ -55,16 +78,16 @@ function initMobileMenu() {
  */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Пропускаем пустые якоря
             if (href === '#' || href === '') {
                 return;
             }
-            
+
             const target = document.querySelector(href);
-            
+
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({
@@ -85,8 +108,8 @@ function initAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in-up');
@@ -94,7 +117,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Наблюдаем за элементами с классом .animate-on-scroll
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
@@ -109,7 +132,7 @@ function initCart() {
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', JSON.stringify([]));
     }
-    
+
     updateCartCount();
 }
 
@@ -119,11 +142,11 @@ function initCart() {
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const cartCount = document.querySelector('.cart-count');
-    
+
     if (cartCount) {
         const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
         cartCount.textContent = totalItems;
-        
+
         // Показываем/скрываем счетчик
         if (totalItems > 0) {
             cartCount.style.display = 'flex';
@@ -138,10 +161,10 @@ function updateCartCount() {
  */
 function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    
+
     // Проверяем, есть ли уже такой товар
     const existingItem = cart.find(item => item.id === product.id);
-    
+
     if (existingItem) {
         existingItem.quantity = (existingItem.quantity || 1) + 1;
     } else {
@@ -150,10 +173,10 @@ function addToCart(product) {
             quantity: 1
         });
     }
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    
+
     // Показываем уведомление
     showNotification('Товар добавлен в корзину!');
 }
@@ -166,7 +189,7 @@ function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
-    
+
     // Добавляем стили
     notification.style.cssText = `
         position: fixed;
@@ -180,9 +203,9 @@ function showNotification(message, type = 'success') {
         z-index: 10000;
         animation: slideInRight 0.3s ease;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Удаляем через 3 секунды
     setTimeout(() => {
         notification.style.animation = 'slideInRight 0.3s ease reverse';
@@ -192,11 +215,69 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
+/**
+ * Cookie Banner
+ * Показывает баннер согласия на использование cookies на всех страницах
+ */
+function initCookieBanner() {
+    // Если уже приняли cookies - не показываем
+    if (localStorage.getItem('cookiesAccepted')) {
+        return;
+    }
+
+    // Проверяем, что баннер еще не существует
+    if (document.getElementById('cookieBanner')) {
+        const existingBanner = document.getElementById('cookieBanner');
+        existingBanner.classList.add('active');
+        return;
+    }
+
+    // Создаем HTML баннера
+    const bannerHTML = `
+        <div class="cookie-banner" id="cookieBanner">
+            <div class="cookie-banner__content">
+                <div class="cookie-banner__text">
+                    <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. 
+                       Продолжая использовать сайт, вы соглашаетесь с 
+                       <a href="privacy.html">Политикой конфиденциальности</a> и обработкой персональных данных.</p>
+                </div>
+                <div class="cookie-banner__actions">
+                    <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Принять</button>
+                    <button class="cookie-banner__btn cookie-banner__btn--more" onclick="window.location.href='privacy.html'">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Добавляем баннер в body
+    document.body.insertAdjacentHTML('beforeend', bannerHTML);
+
+    // Показываем баннер с небольшой задержкой для анимации
+    setTimeout(function () {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+            banner.classList.add('active');
+        }
+    }, 500);
+
+    // Обработчик кнопки "Принять"
+    const acceptBtn = document.getElementById('cookieAccept');
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem('cookiesAccepted', 'true');
+            localStorage.setItem('cookiesAcceptedDate', new Date().toISOString());
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Экспортируем функции для использования в других файлах
 window.SamsonBuket = {
     addToCart,
     updateCartCount,
     showNotification
 };
-
 

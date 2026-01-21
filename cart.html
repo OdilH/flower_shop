@@ -1,33 +1,37 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Корзина - оформление заказа цветов с доставкой по Москве">
     <title>Корзина - Букеты & цветы</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/cart.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    
+
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+
     <!-- HEADER -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                        <a href="index.html" class="logo-text">Цветикс</a>
                     </a>
                 </div>
-                
+
                 <nav class="header__nav">
                     <ul class="nav-list">
                         <li><a href="index.html">Главная</a></li>
@@ -36,13 +40,13 @@
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="header__right">
                     <div class="header__contacts">
                         <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
                         <span class="header__hours">Работаем: 9:00 - 21:00</span>
                     </div>
-                    
+
                     <button class="burger" aria-label="Меню">
                         <span></span>
                         <span></span>
@@ -52,7 +56,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- BREADCRUMBS -->
     <nav class="breadcrumbs">
         <div class="container">
@@ -62,12 +66,12 @@
             </ul>
         </div>
     </nav>
-    
+
     <!-- CART PAGE -->
     <section class="cart-page">
         <div class="container">
             <h1 class="cart-page__title">Корзина</h1>
-            
+
             <!-- Пустая корзина -->
             <div class="cart-empty" id="cartEmpty" style="display: none;">
                 <div class="cart-empty__icon">🛒</div>
@@ -75,7 +79,7 @@
                 <p class="cart-empty__text">Добавьте товары из каталога</p>
                 <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
             </div>
-            
+
             <!-- Корзина с товарами -->
             <div class="cart-content" id="cartContent">
                 <div class="cart-main">
@@ -84,32 +88,32 @@
                         <!-- Товары будут добавлены через JS -->
                     </div>
                 </div>
-                
+
                 <!-- Сайдбар с итогом -->
                 <aside class="cart-sidebar">
                     <div class="cart-summary">
                         <h3 class="cart-summary__title">Ваш заказ</h3>
-                        
+
                         <div class="cart-summary__row">
                             <span>Товары (<span id="summaryCount">0</span>)</span>
                             <span id="summarySubtotal">0 ₽</span>
                         </div>
-                        
+
                         <div class="cart-summary__row" id="discountRow" style="display: none;">
                             <span>Скидка</span>
                             <span class="text-success" id="summaryDiscount">-0 ₽</span>
                         </div>
-                        
+
                         <div class="cart-summary__row">
                             <span>Доставка</span>
                             <span id="summaryDelivery">Рассчитывается</span>
                         </div>
-                        
+
                         <div class="cart-summary__total">
                             <span>Итого</span>
                             <span id="summaryTotal">0 ₽</span>
                         </div>
-                        
+
                         <!-- Промокод -->
                         <div class="cart-promo">
                             <div class="cart-promo__input">
@@ -118,35 +122,42 @@
                             </div>
                             <p class="cart-promo__message" id="promoMessage"></p>
                         </div>
-                        
+
                         <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">
                             Оформить заказ
                         </button>
-                        
+
                         <p class="cart-summary__note">
-                            Нажимая кнопку, вы соглашаетесь с 
-                            <a href="#">условиями обработки данных</a>
+                            Нажимая кнопку, вы соглашаетесь с
+                            <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и <a
+                                href="offer.html" target="_blank">условиями использования</a>
                         </p>
                     </div>
-                    
+
                     <!-- Преимущества -->
                     <div class="cart-benefits">
                         <div class="cart-benefit">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13" />
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                <circle cx="5.5" cy="18.5" r="2.5" />
+                                <circle cx="18.5" cy="18.5" r="2.5" />
                             </svg>
                             <span>Бесплатная доставка от 5000 ₽</span>
                         </div>
                         <div class="cart-benefit">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                             <span>Гарантия свежести</span>
                         </div>
                         <div class="cart-benefit">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
                             </svg>
                             <span>Доставка за 2 часа</span>
                         </div>
@@ -155,13 +166,13 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CHECKOUT MODAL -->
     <div class="modal" id="checkoutModal">
         <div class="modal__overlay"></div>
         <div class="modal__content modal__content--lg">
             <button class="modal__close">&times;</button>
-            
+
             <div class="checkout">
                 <div class="checkout__header">
                     <h2 class="checkout__title">Оформление заказа</h2>
@@ -180,37 +191,40 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <form class="checkout__form" id="checkoutForm">
                     <!-- Шаг 1: Контакты -->
                     <div class="checkout__step-content active" id="step1">
                         <h3 class="checkout__subtitle">Контактные данные</h3>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="customerName">Ваше имя *</label>
-                                <input type="text" id="customerName" name="name" required class="form-input" placeholder="Иван Иванов">
+                                <input type="text" id="customerName" name="name" required class="form-input"
+                                    placeholder="Иван Иванов">
                             </div>
                             <div class="form-group">
                                 <label for="customerPhone">Телефон *</label>
-                                <input type="tel" id="customerPhone" name="phone" required class="form-input" placeholder="+7 (999) 123-45-67">
+                                <input type="tel" id="customerPhone" name="phone" required class="form-input"
+                                    placeholder="+7 (999) 123-45-67">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="customerEmail">Email</label>
-                            <input type="email" id="customerEmail" name="email" class="form-input" placeholder="email@example.com">
+                            <input type="email" id="customerEmail" name="email" class="form-input"
+                                placeholder="email@example.com">
                         </div>
-                        
+
                         <div class="checkout__actions">
                             <button type="button" class="btn btn-primary" onclick="cartPage.nextStep()">Далее</button>
                         </div>
                     </div>
-                    
+
                     <!-- Шаг 2: Доставка -->
                     <div class="checkout__step-content" id="step2">
                         <h3 class="checkout__subtitle">Способ доставки</h3>
-                        
+
                         <div class="delivery-options">
                             <label class="delivery-option">
                                 <input type="radio" name="delivery" value="courier" checked>
@@ -223,7 +237,7 @@
                                     <div class="delivery-option__price">от 500 ₽</div>
                                 </div>
                             </label>
-                            
+
                             <label class="delivery-option">
                                 <input type="radio" name="delivery" value="pickup">
                                 <div class="delivery-option__content">
@@ -236,13 +250,14 @@
                                 </div>
                             </label>
                         </div>
-                        
+
                         <div id="courierFields">
                             <div class="form-group">
                                 <label for="deliveryAddress">Адрес доставки *</label>
-                                <input type="text" id="deliveryAddress" name="address" class="form-input" placeholder="Улица, дом, квартира">
+                                <input type="text" id="deliveryAddress" name="address" class="form-input"
+                                    placeholder="Улица, дом, квартира">
                             </div>
-                            
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="deliveryDate">Дата доставки *</label>
@@ -260,7 +275,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div id="pickupFields" style="display: none;">
                             <div class="pickup-info">
                                 <h4>Адрес магазина:</h4>
@@ -268,9 +283,9 @@
                                 <p>Время работы: 9:00 - 21:00</p>
                             </div>
                         </div>
-                        
+
                         <h3 class="checkout__subtitle">Получатель</h3>
-                        
+
                         <div class="form-group">
                             <label class="checkbox">
                                 <input type="checkbox" id="selfRecipient" checked>
@@ -278,7 +293,7 @@
                                 Я сам получатель
                             </label>
                         </div>
-                        
+
                         <div id="recipientFields" style="display: none;">
                             <div class="form-row">
                                 <div class="form-group">
@@ -291,22 +306,23 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="orderComment">Комментарий к заказу</label>
-                            <textarea id="orderComment" name="comment" class="form-input" rows="3" placeholder="Пожелания по доставке, открытка и т.д."></textarea>
+                            <textarea id="orderComment" name="comment" class="form-input" rows="3"
+                                placeholder="Пожелания по доставке, открытка и т.д."></textarea>
                         </div>
-                        
+
                         <div class="checkout__actions">
                             <button type="button" class="btn btn-outline" onclick="cartPage.prevStep()">Назад</button>
                             <button type="button" class="btn btn-primary" onclick="cartPage.nextStep()">Далее</button>
                         </div>
                     </div>
-                    
+
                     <!-- Шаг 3: Оплата -->
                     <div class="checkout__step-content" id="step3">
                         <h3 class="checkout__subtitle">Способ оплаты</h3>
-                        
+
                         <div class="payment-options">
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="card" checked>
@@ -318,7 +334,7 @@
                                     </div>
                                 </div>
                             </label>
-                            
+
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="cash">
                                 <div class="payment-option__content">
@@ -329,7 +345,7 @@
                                     </div>
                                 </div>
                             </label>
-                            
+
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="transfer">
                                 <div class="payment-option__content">
@@ -341,7 +357,7 @@
                                 </div>
                             </label>
                         </div>
-                        
+
                         <!-- Итоговая информация -->
                         <div class="checkout-total">
                             <h3 class="checkout__subtitle">Итого к оплате</h3>
@@ -358,7 +374,7 @@
                                 <span id="checkoutTotal">0 ₽</span>
                             </div>
                         </div>
-                        
+
                         <div class="checkout__actions">
                             <button type="button" class="btn btn-outline" onclick="cartPage.prevStep()">Назад</button>
                             <button type="submit" class="btn btn-primary btn-lg">Подтвердить заказ</button>
@@ -368,7 +384,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- SUCCESS MODAL -->
     <div class="modal" id="successModal">
         <div class="modal__overlay"></div>
@@ -386,18 +402,18 @@
             </div>
         </div>
     </div>
-    
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col col-3 col-md-6 col-sm-12">
                     <div class="footer__logo">
-                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                        <a href="index.html" class="logo-text">Цветикс</a>
                     </div>
                     <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Каталог</h4>
                     <ul class="footer__menu">
@@ -407,16 +423,18 @@
                         <li><a href="catalog.html?category=wedding">Свадьба</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Информация</h4>
                     <ul class="footer__menu">
                         <li><a href="about.html">О нас</a></li>
                         <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="offer.html">Условия использования</a></li>
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__contacts">
@@ -425,18 +443,20 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
-                <p>&copy; 2024 Букеты & цветы. Все права защищены.</p>
+                <p>&copy; 2024 Цветикс. Все права защищены.</p>
+                <p class="footer__legal">ИП Хосиева Алена Владимировна | ИНН 150501937487 | ОГРНИП 326774600021060</p>
+                <p><a href="privacy.html">Политика конфиденциальности</a> | <a href="offer.html">Условия
+                        использования</a></p>
             </div>
         </div>
     </footer>
-    
+
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cart-page.js"></script>
 </body>
+
 </html>
-
-

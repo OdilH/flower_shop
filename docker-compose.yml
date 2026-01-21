@@ -1,0 +1,51 @@
+services:
+  # PHP-FPM сервис
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: samson_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=samson_user
+      - DB_PASS=samson_pass123
+      - DB_NAME=samson_buket
+    depends_on:
+      - mysql
+
+  # Nginx веб-сервер
+  nginx:
+    image: nginx:alpine
+    container_name: samson_nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  # MySQL база данных
+  mysql:
+    image: mysql:8.0
+    container_name: samson_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: samson_buket
+      MYSQL_USER: samson_user
+      MYSQL_PASSWORD: samson_pass123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
+    driver: local

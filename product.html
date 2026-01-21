@@ -1,40 +1,44 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Купить букет цветов с доставкой по Москве">
     <title>Товар - Букеты & цветы</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/animations.css">
-    
+
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
+
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <!-- HEADER -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                        <a href="index.html" class="logo-text">Цветикс</a>
                     </a>
                 </div>
-                
+
                 <nav class="header__nav">
                     <ul class="nav-list">
                         <li><a href="index.html">Главная</a></li>
@@ -54,30 +58,34 @@
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="header__right">
                     <div class="header__contacts">
                         <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
                         <span class="header__hours">Работаем: 9:00 - 21:00</span>
                     </div>
-                    
+
                     <div class="header__actions">
                         <a href="favorites.html" class="header__icon" title="Избранное">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
                             <span class="favorites-count">0</span>
                         </a>
-                        
+
                         <a href="cart.html" class="header__icon cart-link" title="Корзина">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                             </svg>
                             <span class="cart-count">0</span>
                         </a>
                     </div>
-                    
+
                     <button class="burger" aria-label="Меню">
                         <span></span>
                         <span></span>
@@ -87,7 +95,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- BREADCRUMBS -->
     <nav class="breadcrumbs">
         <div class="container">
@@ -98,7 +106,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <!-- PRODUCT DETAIL -->
     <section class="product-detail">
         <div class="container">
@@ -111,7 +119,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- RELATED PRODUCTS -->
     <section class="related-products">
         <div class="container">
@@ -124,7 +132,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- RECENTLY VIEWED -->
     <section class="recently-viewed" id="recentlyViewed" style="display: none;">
         <div class="container">
@@ -137,18 +145,18 @@
             </div>
         </div>
     </section>
-    
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col col-3 col-md-6 col-sm-12">
                     <div class="footer__logo">
-                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы">
+                        <a href="index.html" class="logo-text">Цветикс</a>
                     </div>
                     <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Каталог</h4>
                     <ul class="footer__menu">
@@ -158,16 +166,18 @@
                         <li><a href="catalog.html?category=wedding">Свадьба</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Информация</h4>
                     <ul class="footer__menu">
                         <li><a href="about.html">О нас</a></li>
                         <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="offer.html">Условия использования</a></li>
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__contacts">
@@ -176,20 +186,23 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
-                <p>&copy; 2024 Букеты & цветы. Все права защищены.</p>
+                <p>&copy; 2024 Цветикс. Все права защищены.</p>
+                <p class="footer__legal">ИП Хосиева Алена Владимировна | ИНН 150501937487 | ОГРНИП 326774600021060</p>
+                <p><a href="privacy.html">Политика конфиденциальности</a> | <a href="offer.html">Условия
+                        использования</a></p>
             </div>
         </div>
     </footer>
-    
+
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/product.js"></script>
-    
+
     <script>
         AOS.init({
             duration: 600,
@@ -198,6 +211,5 @@
         });
     </script>
 </body>
+
 </html>
-
-

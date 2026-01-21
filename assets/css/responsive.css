@@ -118,6 +118,20 @@
     .header__inner {
         flex-wrap: wrap;
     }
+
+    .header__left {
+        flex-wrap: wrap;
+        row-gap: 8px;
+        column-gap: 20px;
+    }
+
+    .header__left .header__phone {
+        font-size: 1rem;
+    }
+
+    .header__right--home {
+        gap: 20px;
+    }
     
     .header__nav {
         order: 3;

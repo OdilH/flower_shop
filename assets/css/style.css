@@ -32,8 +32,8 @@ img[src$=".svg"] {
 
 :root {
     /* Цвета */
-    --color-primary: #e91e63;
-    --color-primary-light: #ff6b9d;
+    --color-primary: #0ABAB5;
+    --color-primary-light: #5DD3CE;
     --color-secondary: #2c3e50;
     --color-secondary-light: #34495e;
     --color-accent: #f39c12;
@@ -384,8 +384,51 @@ a:hover {
     width: auto;
 }
 
+/* Текстовый логотип */
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0ABAB5 0%, #5DD3CE 50%, #0ABAB5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: var(--transition);
+}
+
+.logo-text:hover {
+    background: linear-gradient(135deg, #5DD3CE 0%, #0ABAB5 50%, #5DD3CE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.02);
+}
+
+.footer .logo-text {
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, #0ABAB5 0%, #5DD3CE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .header__nav {
     flex: 1;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    /* Отступ между брендом и телефоном */
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-list {
@@ -444,10 +487,49 @@ a:hover {
     color: var(--color-primary);
 }
 
+/* Часы работы в хедере */
+.header__schedule {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-secondary);
+}
+
+.schedule-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+}
+
+.schedule-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+}
+
+.schedule-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
 .header__right {
     display: flex;
     align-items: center;
-    gap: 20px;
+}
+
+.header__right--home {
+    gap: 32px;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-right: 0;
 }
 
 .header__contacts {
@@ -458,9 +540,17 @@ a:hover {
 }
 
 .header__phone {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    /* Жирный крупный шрифт */
+    font-weight: 700;
     color: var(--color-secondary);
+    /* Почти черный */
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.header__left .header__phone {
+    white-space: nowrap;
 }
 
 .header__hours {
@@ -527,27 +617,32 @@ a:hover {
     font-weight: 600;
 }
 
-/* Бургер меню */
+/* Бургер меню - всегда видимый */
 .burger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    z-index: 1001;
 }
 
 .burger span {
-    width: 25px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     background-color: var(--color-secondary);
     border-radius: 2px;
     transition: var(--transition);
 }
 
+.burger:hover span {
+    background-color: var(--color-primary);
+}
+
 .burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .burger.active span:nth-child(2) {
@@ -555,8 +650,267 @@ a:hover {
 }
 
 .burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
+
+/* Иконки в хедере */
+/* Иконки в хедере */
+.header__icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #999;
+    /* Серый цвет для иконок и текста */
+    transition: var(--transition);
+    gap: 4px;
+}
+
+.icon-btn:hover {
+    color: var(--color-primary);
+}
+
+.icon-btn svg {
+    /* Иконки чуть больше или стандартные */
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    /* Чтобы заливка менялась при ховере */
+}
+
+/* Для svg с stroke (как сейчас) */
+.icon-btn svg[fill="none"] {
+    fill: none;
+}
+
+.icon-btn span {
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: 500;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrapper .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: none;
+    /* Скрыто по умолчанию, JS покажет если > 0 */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific button styles if needed */
+.cart-btn:hover .cart-count {
+    background-color: var(--color-primary-light);
+}
+
+/* ============================================
+   SIDEBAR СЛАЙДЕР
+   ============================================ */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.sidebar.active {
+    pointer-events: all;
+    visibility: visible;
+}
+
+.sidebar__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.active .sidebar__overlay {
+    opacity: 1;
+}
+
+.sidebar__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85%;
+    height: 100%;
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar.active .sidebar__content {
+    transform: translateX(0);
+}
+
+.sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.sidebar__header .logo-text {
+    font-size: 1.5rem;
+}
+
+.sidebar__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+.sidebar__close:hover {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+.sidebar__nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.sidebar__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__menu>li {
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.sidebar__menu>li>a {
+    display: block;
+    padding: 16px 24px;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.sidebar__menu>li>a:hover,
+.sidebar__menu>li>a.active {
+    color: var(--color-primary);
+    background-color: rgba(10, 186, 181, 0.05);
+}
+
+.sidebar__submenu {
+    list-style: none;
+    padding: 0 0 12px 0;
+    margin: 0;
+    background-color: var(--color-bg-light);
+}
+
+.sidebar__submenu li a {
+    display: block;
+    padding: 10px 24px 10px 40px;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.sidebar__submenu li a:hover {
+    color: var(--color-primary);
+}
+
+.sidebar__contacts {
+    padding: 24px;
+    border-top: 1px solid var(--color-bg-light);
+    background-color: var(--color-bg-light);
+}
+
+.sidebar__phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.sidebar__hours {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+}
+
+.sidebar__social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    background: var(--color-primary-light);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Body lock when sidebar is open */
+body.sidebar-open {
+    overflow: hidden;
+}
+
 
 /* 12. HERO СЕКЦИЯ */
 .hero {
@@ -775,4 +1129,123 @@ a:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.footer__legal {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 /* Адаптивность будет в responsive.css */
+
+/* ============================================
+   COOKIE BANNER
+   ============================================ */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.97);
+    color: #fff;
+    padding: 20px;
+    z-index: 10000;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cookie-banner.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-banner__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner__text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cookie-banner__text p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cookie-banner__text a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.cookie-banner__text a:hover {
+    color: var(--color-primary-light);
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.cookie-banner__btn--accept {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.cookie-banner__btn--accept:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.cookie-banner__btn--more {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-banner__btn--more:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 16px;
+    }
+
+    .cookie-banner__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-banner__text {
+        min-width: 100%;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
