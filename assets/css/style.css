@@ -1,5 +1,5 @@
 ﻿/* ============================================
-   Букеты & цветы - ОСНОВНЫЕ СТИЛИ
+   Цветикс - ОСНОВНЫЕ СТИЛИ
    ============================================ */
 
 /* Fallback для изображений */
@@ -141,6 +141,15 @@ a:hover {
     padding: 0 20px;
 }
 
+.container-wide {
+    max-width: 1650px;
+    /* Reduced specific reference width */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* Standard gutter */
+}
+
 /* 5. Кнопки */
 .btn {
     display: inline-block;
@@ -206,6 +215,28 @@ a:hover {
     margin: 0 -15px;
 }
 
+/* Tight Grid (Zero Gap) */
+.row.tight-grid {
+    margin: 0;
+    gap: 0;
+}
+
+.row.tight-grid .col {
+    padding: 0;
+    /* Remove padding for tile effect */
+}
+
+/* Tight Grid (Zero Gap) */
+.row.tight-grid {
+    margin: 0;
+    gap: 0;
+}
+
+.row.tight-grid .col {
+    padding: 0;
+    /* Remove padding for tile effect */
+}
+
 .col {
     padding: 0 15px;
 }
@@ -227,75 +258,128 @@ a:hover {
 }
 
 /* 8. Карточка товара */
+/* 8. Карточка товара (Redesigned) */
 .product-card {
-    background: var(--color-bg);
-    border-radius: var(--radius-lg);
+    position: relative;
+    height: 400px;
+    /* Fixed height for consistency */
+    border-radius: var(--radius-sm);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    margin-bottom: var(--spacing-md);
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    margin-bottom: 0;
+    /* No margin for tight grid */
+    border-radius: 0;
+    /* Sharp corners */
 }
 
 .product-card__image {
-    position: relative;
     width: 100%;
-    height: 280px;
-    overflow: hidden;
-    background-color: var(--color-bg-light);
+    height: 100%;
 }
 
 .product-card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-slow);
+    transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-card__image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .product-card__badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    padding: 5px 12px;
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-    font-weight: 600;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    /* Minimalist or remove bg if needed, keeping for now */
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    /* Optional: glass effect */
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
 }
 
 .product-card__content {
-    padding: var(--spacing-md);
-}
-
-.product-card__title {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-secondary);
-}
-
-.product-card__description {
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-sm);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 2;
+    /* Gradient overlay from bottom */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .product-card__price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+    color: #fff;
+    margin-bottom: 4px;
+    /* Shadow for better readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* 9. Заголовки секций */
+.product-card__title {
+    font-size: 0.9rem;
+    /* Smaller, subtle title */
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* Hide description and button for clean look */
+.product-card__description,
+.product-card .btn {
+    display: none;
+}
+
+/* ID & Status - Bottom Right */
+.product-id-wrapper {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 6;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #27ae60;
+    /* Green by default */
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.status-dot.yellow {
+    background-color: #f1c40f;
+}
+
+.status-dot.red {
+    background-color: #e74c3c;
+}
+
+.product-id-overlay {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
 .section-title h2 {
     position: relative;
     display: inline-block;

@@ -1,5 +1,5 @@
 ﻿/**
- * Букеты & цветы - ОСНОВНОЙ JAVASCRIPT
+ * Цветикс - ОСНОВНОЙ JAVASCRIPT
  */
 
 // Ждем загрузки DOM
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initCart();
     initCookieBanner();
 
-    console.log('Букеты & цветы - сайт загружен');
+    console.log('Цветикс - сайт загружен');
 });
 
 /**

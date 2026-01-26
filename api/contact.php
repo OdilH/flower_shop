@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * API: ФОРМА ОБРАТНОЙ СВЯЗИ
  */
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 try {
     $db = Database::getInstance();
     $conn = $db->getConnection();
-    
+
     // Получаем данные из POST или JSON
     if (!empty($_POST)) {
         $name = isset($_POST['name']) ? trim($_POST['name']) : '';
@@ -36,7 +36,14 @@ try {
         $subject = isset($data['subject']) ? trim($data['subject']) : '';
         $message = isset($data['message']) ? trim($data['message']) : '';
     }
-    
+
+    // ИСПРАВЛЕНО: Защита от XSS атак
+    $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+    $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
+    $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
+    $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+
     // Валидация
     if (empty($name) || empty($email) || empty($message)) {
         http_response_code(400);
@@ -46,7 +53,7 @@ try {
         ], JSON_UNESCAPED_UNICODE);
         exit;
     }
-    
+
     // Проверка email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
@@ -56,21 +63,16 @@ try {
         ], JSON_UNESCAPED_UNICODE);
         exit;
     }
-    
+
     // Сохраняем в базу данных
+    // ИСПРАВЛЕНО: bind_param() уже экранирует данные, не нужно escape()
     $stmt = $conn->prepare("INSERT INTO contacts (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssss', 
-        $db->escape($name),
-        $db->escape($email),
-        $db->escape($phone),
-        $db->escape($subject),
-        $db->escape($message)
-    );
-    
+    $stmt->bind_param('sssss', $name, $email, $phone, $subject, $message);
+
     $stmt->execute();
     $contact_id = $conn->insert_id;
     $stmt->close();
-    
+
     // Отправляем email
     $to = SITE_EMAIL;
     $email_subject = !empty($subject) ? $subject : 'Сообщение с сайта от ' . $name;
@@ -84,21 +86,22 @@ try {
         $email_body .= "Тема: {$subject}\n";
     }
     $email_body .= "\nСообщение:\n{$message}\n";
-    
+
     $email_sent = @mail($to, $email_subject, $email_body, "From: {$email}\r\n");
-    
+
     echo json_encode([
         'success' => true,
         'message' => 'Сообщение успешно отправлено',
         'contact_id' => $contact_id
     ], JSON_UNESCAPED_UNICODE);
-    
+
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'error' => 'Ошибка при отправке сообщения',
-        'message' => $e->getMessage()
+        'error' => 'Ошибка при отправке сообщения'
+        // ИСПРАВЛЕНО: Не раскрываем детали
+        // 'message' => $e->getMessage()
     ], JSON_UNESCAPED_UNICODE);
 }
 

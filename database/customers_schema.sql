@@ -73,8 +73,8 @@ INSERT INTO customers (email, password_hash, first_name, last_name, phone) VALUE
 
 -- Тестовые адреса
 INSERT INTO customer_addresses (customer_id, title, address, phone, is_default) VALUES
-(1, 'Дом', 'г. Москва, ул. Примерная, д. 15, кв. 42', '+7 (999) 123-45-67', TRUE),
-(1, 'Работа', 'г. Москва, Бизнес-центр "Сити", Пресненская наб., д. 8', '+7 (999) 123-45-67', FALSE);
+(1, 'Дом', 'г. Москва, ул. Енисейская, д. 15, кв. 42', '+7 (999) 123-45-67', TRUE),
+(1, 'Работа', 'г. Москва, ул. Енисейская, д. 15', '+7 (999) 123-45-67', FALSE);
 
 -- Тестовое избранное
 INSERT INTO customer_favorites (customer_id, product_id) VALUES

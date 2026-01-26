@@ -40,8 +40,8 @@ define('DB_PASS', 'your_password');
 define('DB_NAME', 'samson_buket');
 
 // Настройки сайта
-define('SITE_EMAIL', 'info@samson-buket.ru');
-define('SITE_PHONE', '+7 (495) 587-07-07');
+define('SITE_EMAIL', 'l1m12345612@gmail.com');
+define('SITE_PHONE', '+79252944432');
 ```
 
 ### 3. Настройка веб-сервера

@@ -1,19 +1,21 @@
-﻿<?php
+<?php
 /**
  * КОНФИГУРАЦИЯ ПРОЕКТА
  */
 
 // Настройки базы данных
+// Настройки базы данных
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_USER', 'developer');
+define('DB_PASS', 'dev123');
 define('DB_NAME', 'samson_buket');
 define('DB_CHARSET', 'utf8mb4');
+// define('DB_SOCKET', '/var/run/mysqld/mysqld.sock');
 
 // Настройки сайта
-define('SITE_NAME', 'Букеты & цветы');
-define('SITE_EMAIL', 'info@samson-buket.ru');
-define('SITE_PHONE', '+7 (495) 587-07-07');
+define('SITE_NAME', 'Цветикс');
+define('SITE_EMAIL', 'l1m12345612@gmail.com');
+define('SITE_PHONE', '+79252944432');
 
 // Настройки доставки
 define('DELIVERY_COST', 500);
@@ -29,7 +31,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 // Обработка preflight запросов
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Букеты & цветы - доставка авторских цветочных композиций по Москве. Букеты, композиции, свадебная флористика.">
-    <meta name="keywords" content="доставка цветов, букеты, цветы москва, Букеты & цветы">
-    <title>Букеты & цветы - Доставка цветов по Москве</title>
+        content="Цветикс - доставка авторских цветочных композиций по Москве. Букеты, композиции, свадебная флористика.">
+    <meta name="keywords" content="доставка цветов, букеты, цветы москва, Цветикс">
+    <title>Цветикс - Доставка цветов по Москве</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -34,7 +34,7 @@
 
     <!-- HEADER -->
     <header class="header">
-        <div class="container">
+        <div class="container-wide">
             <div class="header__inner">
                 <!-- Левая часть: бургер, логотип и телефон -->
                 <div class="header__left">
@@ -51,7 +51,7 @@
                             </a>
                         </div>
                     </div>
-                    <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
+                    <a href="tel:+79252944432" class="header__phone">+79252944432</a>
                 </div>
 
                 <!-- Правая часть: часы работы и иконки -->
@@ -127,10 +127,10 @@
                     <li class="sidebar__submenu-parent">
                         <a href="catalog.html">Каталог</a>
                         <ul class="sidebar__submenu">
-                            <li><a href="catalog.html?category=bouquets">Букеты</a></li>
-                            <li><a href="catalog.html?category=baskets">Цветы в корзине</a></li>
-                            <li><a href="catalog.html?category=artbox">Цветы в Art-Box</a></li>
-                            <li><a href="catalog.html?category=compositions">Композиции</a></li>
+                            <li><a href="catalog.html?category=bukety">Букеты</a></li>
+                            <li><a href="catalog.html?category=korziny">Цветы в корзине</a></li>
+                            <li><a href="catalog.html?category=flower-box">Цветы в Art-Box</a></li>
+                            <li><a href="catalog.html?category=kompozicii">Композиции</a></li>
                             <li><a href="catalog.html?category=exclusive">Exclusive</a></li>
                             <li><a href="catalog.html?category=wedding">Свадьба</a></li>
                             <li><a href="catalog.html?category=gifts">Подарки</a></li>
@@ -143,8 +143,8 @@
             </nav>
 
             <div class="sidebar__contacts">
-                <a href="tel:+74955870707" class="sidebar__phone">+7 (495) 587-07-07</a>
-                <span class="sidebar__hours">Работаем: 9:00 - 21:00</span>
+                <a href="tel:+79252944432" class="sidebar__phone">+79252944432</a>
+                <span class="sidebar__hours">Работаем: 24/7</span>
                 <div class="sidebar__social">
                     <a href="#" class="social-btn">WhatsApp</a>
                     <a href="#" class="social-btn">Telegram</a>
@@ -156,28 +156,29 @@
 
     <!-- КАТАЛОГ ТОВАРОВ (Популярные) -->
     <section class="catalog section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Популярные букеты</h2>
-                <p>Выберите идеальный букет для вашего особенного момента</p>
-            </div>
+        <div class="container-wide">
 
-            <div class="row" id="products-container">
+
+            <div class="row tight-grid" id="products-container">
                 <!-- Товары будут загружены через JavaScript -->
                 <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-card">
                         <div class="product-card__image">
                             <img src="assets/img/products/product-1.png" alt="Букет роз">
                             <span class="product-card__badge">Хит</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 2204 M</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Букет из 25 роз</h3>
-                            <p class="product-card__description">Красные розы премиум класса</p>
-                            <div class="product-card__price">2 500 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(1, 'Букет из 25 роз', 2500, 'assets/img/products/product-1.png')">В
-                                корзину</button>
+                            <div class="product-card__price">2 500 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -185,15 +186,19 @@
                     <div class="product-card">
                         <div class="product-card__image">
                             <img src="assets/img/products/product-2.png" alt="Букет тюльпанов">
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 2131 S</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Букет тюльпанов</h3>
-                            <p class="product-card__description">Яркие весенние тюльпаны</p>
-                            <div class="product-card__price">1 800 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(2, 'Букет тюльпанов', 1800, 'assets/img/products/product-2.png')">В
-                                корзину</button>
+                            <div class="product-card__price">1 800 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -202,15 +207,19 @@
                         <div class="product-card__image">
                             <img src="assets/img/products/product-3.png" alt="Свадебный букет">
                             <span class="product-card__badge">Новинка</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 1331 L</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Свадебный букет</h3>
-                            <p class="product-card__description">Нежный белый букет для невесты</p>
-                            <div class="product-card__price">3 500 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(3, 'Свадебный букет', 3500, 'assets/img/products/product-3.png')">В
-                                корзину</button>
+                            <div class="product-card__price">3 500 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -218,15 +227,19 @@
                     <div class="product-card">
                         <div class="product-card__image">
                             <img src="assets/img/products/product-4.png" alt="Композиция в корзине">
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 1170 M</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Композиция в корзине</h3>
-                            <p class="product-card__description">Смешанный букет в плетеной корзине</p>
-                            <div class="product-card__price">2 200 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(4, 'Композиция в корзине', 2200, 'assets/img/products/product-4.png')">В
-                                корзину</button>
+                            <div class="product-card__price">2 200 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -235,15 +248,19 @@
                         <div class="product-card__image">
                             <img src="assets/img/products/product-5.png" alt="Букет пионов">
                             <span class="product-card__badge">Новинка</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 1089 L</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Букет пионов</h3>
-                            <p class="product-card__description">Нежные розовые пионы</p>
-                            <div class="product-card__price">4 200 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(5, 'Букет пионов', 4200, 'assets/img/products/product-5.png')">В
-                                корзину</button>
+                            <div class="product-card__price">4 200 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -252,15 +269,67 @@
                         <div class="product-card__image">
                             <img src="assets/img/products/product-6.png" alt="Цветы в шляпной коробке">
                             <span class="product-card__badge">Exclusive</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <span class="product-id-overlay">№ 382 L</span>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Цветы в шляпной коробке</h3>
-                            <p class="product-card__description">Элегантная композиция в коробке</p>
-                            <div class="product-card__price">5 500 ₽</div>
-                            <button class="btn btn-primary btn-block"
-                                onclick="addProductToCart(6, 'Цветы в шляпной коробке', 5500, 'assets/img/products/product-6.png')">В
-                                корзину</button>
+                            <div class="product-card__price">5 500 руб.</div>
                         </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="700">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-1.png" alt="Flower Box Нежность">
+                            <span class="product-card__badge">Новинка</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <div class="product-id-wrapper">
+                                <span class="status-dot yellow"></span>
+                                <span class="product-id-overlay">№ 445 S</span>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__price">2 800 руб.</div>
+                        </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col col-3 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="800">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="assets/img/products/product-2.png" alt="Корзина с гортензиями">
+                            <span class="product-card__badge">Хит</span>
+                            <button class="quick-view-btn-center">Быстрый просмотр</button>
+                            <div class="product-id-wrapper">
+                                <span class="status-dot"></span>
+                                <span class="product-id-overlay">№ 892 M</span>
+                            </div>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__price">3 800 руб.</div>
+                        </div>
+                        <button class="product-card__favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -271,53 +340,6 @@
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
-    <section class="reviews section" style="background-color: var(--color-bg-light);">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Отзывы наших клиентов</h2>
-            </div>
-
-            <div class="reviews-slider swiper" data-aos="fade-up">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-card__rating">★★★★★</div>
-                            <p class="review-card__text">"Потрясающий букет! Цветы были свежие, доставка быстрая. Очень
-                                довольна!"</p>
-                            <div class="review-card__author">
-                                <strong>Анна М.</strong>
-                                <span>Москва</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-card__rating">★★★★★</div>
-                            <p class="review-card__text">"Заказывала свадебный букет. Превзошли все ожидания! Спасибо за
-                                красоту!"</p>
-                            <div class="review-card__author">
-                                <strong>Мария К.</strong>
-                                <span>Москва</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-card__rating">★★★★★</div>
-                            <p class="review-card__text">"Регулярно заказываю букеты. Всегда свежие цветы и отличный
-                                сервис!"</p>
-                            <div class="review-card__author">
-                                <strong>Елена В.</strong>
-                                <span>Москва</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -325,8 +347,7 @@
             <div class="row">
                 <div class="col col-3 col-md-6 col-sm-12">
                     <div class="footer__logo">
-                        <img src="assets/img/logo/logo.svg" alt="Букеты & цветы"
-                            onerror="this.src='assets/img/logo/logo.svg'">
+                        <a href="index.html" class="logo-text">Цветикс</a>
                     </div>
                     <p class="footer__text">Авторские цветочные композиции с доставкой по Москве</p>
                 </div>
@@ -353,8 +374,8 @@
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__contacts">
-                        <li><a href="tel:+74955870707">+7 (495) 587-07-07</a></li>
-                        <li>Работаем: 9:00 - 21:00</li>
+                        <li><a href="tel:+79252944432">+79252944432</a></li>
+                        <li>Работаем: 24/7</li>
                         <li>
                             <a href="#" class="social-link">WhatsApp</a>
                             <a href="#" class="social-link">Telegram</a>

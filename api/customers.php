@@ -73,13 +73,21 @@ try {
                 }
 
                 if (!empty($updates)) {
-                    $sql = "UPDATE customers SET " . implode(', ', $updates) . " WHERE id = " . $customer['id'];
-                    $conn->query($sql);
+                    // ИСПРАВЛЕНО: используем prepared statement
+                    $sql = "UPDATE customers SET " . implode(', ', $updates) . " WHERE id = ?";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param('i', $customer['id']);
+                    $stmt->execute();
+                    $stmt->close();
                 }
 
-                // Возвращаем обновленный профиль
-                $result = $conn->query("SELECT * FROM customers WHERE id = " . $customer['id']);
+                // Возвращаем обновленный профиль (ИСПРАВЛЕНО)
+                $stmt = $conn->prepare("SELECT * FROM customers WHERE id = ?");
+                $stmt->bind_param('i', $customer['id']);
+                $stmt->execute();
+                $result = $stmt->get_result();
                 $updated = $result->fetch_assoc();
+                $stmt->close();
                 unset($updated['password_hash']);
 
                 echo json_encode([
@@ -171,9 +179,12 @@ try {
                 exit;
             }
 
-            // Обновляем пароль
+            // Обновляем пароль (ИСПРАВЛЕНО)
             $new_hash = password_hash($data['new_password'], PASSWORD_DEFAULT);
-            $conn->query("UPDATE customers SET password_hash = '$new_hash' WHERE id = " . $customer['id']);
+            $stmt = $conn->prepare("UPDATE customers SET password_hash = ? WHERE id = ?");
+            $stmt->bind_param('si', $new_hash, $customer['id']);
+            $stmt->execute();
+            $stmt->close();
 
             echo json_encode([
                 'success' => true,

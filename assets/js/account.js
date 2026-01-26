@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 async function loadUserData() {
     try {
-        const response = await fetch(`${API_URL}/auth.php?action=me&token=${Auth.getToken()}`);
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/auth.php?action=me`, {
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
+        });
         const data = await response.json();
 
         if (data.success) {
@@ -59,7 +64,12 @@ async function loadUserData() {
  */
 async function loadOrders() {
     try {
-        const response = await fetch(`${API_URL}/customers.php?action=orders&token=${Auth.getToken()}`);
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/customers.php?action=orders`, {
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
+        });
         const data = await response.json();
 
         if (data.success) {
@@ -144,7 +154,12 @@ function renderOrders(orders) {
  */
 async function loadAddresses() {
     try {
-        const response = await fetch(`${API_URL}/addresses.php?token=${Auth.getToken()}`);
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/addresses.php`, {
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
+        });
         const data = await response.json();
 
         if (data.success) {
@@ -205,7 +220,12 @@ function renderAddresses(addresses) {
  */
 async function loadFavorites() {
     try {
-        const response = await fetch(`${API_URL}/favorites.php?token=${Auth.getToken()}`);
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/favorites.php`, {
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
+        });
         const data = await response.json();
 
         if (data.success) {
@@ -261,8 +281,12 @@ function renderFavorites(favorites) {
  */
 async function removeFavorite(productId) {
     try {
-        const response = await fetch(`${API_URL}/favorites.php?product_id=${productId}&token=${Auth.getToken()}`, {
-            method: 'DELETE'
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/favorites.php?product_id=${productId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
         });
         const data = await response.json();
 
@@ -280,8 +304,12 @@ async function removeFavorite(productId) {
  */
 async function setDefaultAddress(id) {
     try {
-        const response = await fetch(`${API_URL}/addresses.php?action=set_default&id=${id}&token=${Auth.getToken()}`, {
-            method: 'POST'
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/addresses.php?action=set_default&id=${id}`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
         });
         const data = await response.json();
 
@@ -301,8 +329,12 @@ async function deleteAddress(id) {
     if (!confirm('Удалить этот адрес?')) return;
 
     try {
-        const response = await fetch(`${API_URL}/addresses.php?id=${id}&token=${Auth.getToken()}`, {
-            method: 'DELETE'
+        // ИСПРАВЛЕНО: токен в Authorization header
+        const response = await fetch(`${API_URL}/addresses.php?id=${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${Auth.getToken()}`
+            }
         });
         const data = await response.json();
 
@@ -368,10 +400,12 @@ function initProfileForm() {
             };
 
             try {
-                const response = await fetch(`${API_URL}/customers.php?action=profile&token=${Auth.getToken()}`, {
+                // ИСПРАВЛЕНО: токен в Authorization header
+                const response = await fetch(`${API_URL}/customers.php?action=profile`, {
                     method: 'PUT',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${Auth.getToken()}`
                     },
                     body: JSON.stringify(data)
                 });
@@ -402,8 +436,12 @@ function initLogout() {
 
             if (confirm('Вы уверены, что хотите выйти?')) {
                 try {
-                    await fetch(`${API_URL}/auth.php?action=logout&token=${Auth.getToken()}`, {
-                        method: 'POST'
+                    // ИСПРАВЛЕНО: токен в Authorization header
+                    await fetch(`${API_URL}/auth.php?action=logout`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${Auth.getToken()}`
+                        }
                     });
                 } catch (error) {
                     console.log('Logout error:', error);

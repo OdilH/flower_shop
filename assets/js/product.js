@@ -145,7 +145,7 @@ class ProductPage {
         const container = document.getElementById('productContent');
         
         // Устанавливаем заголовок страницы
-        document.title = `${this.product.name} - Букеты & цветы`;
+        document.title = `${this.product.name} - Цветикс`;
         document.getElementById('breadcrumbProduct').textContent = this.product.name;
         
         // Формируем изображения

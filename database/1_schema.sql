@@ -1,5 +1,5 @@
 ﻿-- ============================================
--- Букеты & цветы - СХЕМА БАЗЫ ДАННЫХ
+-- Цветикс - СХЕМА БАЗЫ ДАННЫХ
 -- ============================================
 
 -- Создание базы данных
@@ -199,18 +199,18 @@ CREATE TABLE IF NOT EXISTS product_flowers (
 
 -- Примеры товаров (обновленные категории)
 INSERT INTO products (name, slug, description, short_description, price, category_id, in_stock, is_popular, is_new, badge, image) VALUES
-('Букет из 25 красных роз', 'bouquet-25-red-roses', 'Роскошный букет из 25 красных роз премиум класса. Идеальный подарок для выражения чувств.', 'Красные розы премиум класса', 2500.00, 1, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-1.jpg'),
-('Букет тюльпанов', 'bouquet-tulips', 'Яркий весенний букет из свежих тюльпанов различных оттенков.', 'Яркие весенние тюльпаны', 1800.00, 1, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-2.jpg'),
-('Свадебный букет невесты', 'wedding-bouquet-white', 'Нежный белый свадебный букет из роз и эустомы. Создан специально для невесты.', 'Нежный белый букет для невесты', 3500.00, 7, TRUE, TRUE, FALSE, NULL, 'assets/img/products/product-3.jpg'),
-('Композиция в корзине', 'composition-basket', 'Смешанный букет в плетеной корзине. Идеально для подарка или украшения интерьера.', 'Смешанный букет в плетеной корзине', 2200.00, 2, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-4.jpg'),
-('Букет из пионов', 'bouquet-peonies', 'Пышный букет из нежных пионов. Символ роскоши и изящества.', 'Нежные пионы', 3200.00, 1, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-5.jpg'),
-('Эксклюзивный букет', 'exclusive-bouquet', 'Авторская композиция от чемпионов России по флористике. Уникальный дизайн.', 'Авторская композиция', 4500.00, 6, TRUE, FALSE, TRUE, 'Exclusive', 'assets/img/products/product-6.jpg'),
-('Flower Box Нежность', 'flower-box-tenderness', 'Цветочная композиция в стильном боксе. Идеальный подарок.', 'Стильный flower box', 2800.00, 4, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-1.jpg'),
-('Корзина с гортензиями', 'basket-hydrangeas', 'Пышная корзина с нежными гортензиями и розами.', 'Гортензии в корзине', 3800.00, 2, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-2.jpg'),
-('Букет с лилиями', 'bouquet-lilies', 'Элегантный букет с ароматными лилиями.', 'Ароматные лилии', 2700.00, 1, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-3.jpg'),
-('Шляпная коробка Premium', 'hat-box-premium', 'Роскошные цветы в шляпной коробке премиум класса.', 'Premium flower box', 4200.00, 3, TRUE, TRUE, FALSE, 'Premium', 'assets/img/products/product-4.jpg'),
-('Букет из эустомы', 'bouquet-eustoma', 'Нежный букет из воздушной эустомы.', 'Нежная эустома', 2300.00, 1, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-5.jpg'),
-('Композиция в вазе', 'composition-vase', 'Авторская композиция в дизайнерской вазе.', 'Интерьерная композиция', 3100.00, 5, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-6.jpg');
+('Букет из 25 красных роз', 'bouquet-25-red-roses', 'Роскошный букет из 25 красных роз премиум класса. Идеальный подарок для выражения чувств.', 'Красные розы премиум класса', 5000.00, 1, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-1.png'),
+('Букет тюльпанов', 'bouquet-tulips', 'Яркий весенний букет из свежих тюльпанов различных оттенков.', 'Яркие весенние тюльпаны', 3600.00, 1, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-2.png'),
+('Свадебный букет невесты', 'wedding-bouquet-white', 'Нежный белый свадебный букет из роз и эустомы. Создан специально для невесты.', 'Нежный белый букет для невесты', 7000.00, 7, TRUE, TRUE, FALSE, NULL, 'assets/img/products/product-3.png'),
+('Композиция в корзине', 'composition-basket', 'Смешанный букет в плетеной корзине. Идеально для подарка или украшения интерьера.', 'Смешанный букет в плетеной корзине', 4400.00, 2, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-4.png'),
+('Букет из пионов', 'bouquet-peonies', 'Пышный букет из нежных пионов. Символ роскоши и изящества.', 'Нежные пионы', 6400.00, 1, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-5.png'),
+('Эксклюзивный букет', 'exclusive-bouquet', 'Авторская композиция от чемпионов России по флористике. Уникальный дизайн.', 'Авторская композиция', 9000.00, 6, TRUE, FALSE, TRUE, 'Exclusive', 'assets/img/products/product-6.png'),
+('Flower Box Нежность', 'flower-box-tenderness', 'Цветочная композиция в стильном боксе. Идеальный подарок.', 'Стильный flower box', 5600.00, 4, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-1.png'),
+('Корзина с гортензиями', 'basket-hydrangeas', 'Пышная корзина с нежными гортензиями и розами.', 'Гортензии в корзине', 7600.00, 2, TRUE, TRUE, FALSE, 'Хит', 'assets/img/products/product-2.png'),
+('Букет с лилиями', 'bouquet-lilies', 'Элегантный букет с ароматными лилиями.', 'Ароматные лилии', 5400.00, 1, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-3.png'),
+('Шляпная коробка Premium', 'hat-box-premium', 'Роскошные цветы в шляпной коробке премиум класса.', 'Premium flower box', 8400.00, 3, TRUE, TRUE, FALSE, 'Premium', 'assets/img/products/product-4.png'),
+('Букет из эустомы', 'bouquet-eustoma', 'Нежный букет из воздушной эустомы.', 'Нежная эустома', 4600.00, 1, TRUE, FALSE, TRUE, 'Новинка', 'assets/img/products/product-5.png'),
+('Композиция в вазе', 'composition-vase', 'Авторская композиция в дизайнерской вазе.', 'Интерьерная композиция', 6200.00, 5, TRUE, FALSE, FALSE, NULL, 'assets/img/products/product-6.png');
 
 -- Связи товаров с типами цветов
 INSERT INTO product_flowers (product_id, flower_type_id) VALUES
@@ -237,16 +237,16 @@ INSERT INTO product_flowers (product_id, flower_type_id) VALUES
 
 -- Настройки сайта
 INSERT INTO settings (`key`, `value`, description) VALUES
-('site_name', 'Букеты & цветы', 'Название сайта'),
-('site_email', 'info@samson-buket.ru', 'Email для уведомлений'),
-('site_phone', '+7 (495) 587-07-07', 'Телефон для связи'),
+('site_name', 'Цветикс', 'Название сайта'),
+('site_email', 'l1m12345612@gmail.com', 'Email для уведомлений'),
+('site_phone', '+79252944432', 'Телефон для связи'),
 ('delivery_cost', '500', 'Стоимость доставки'),
 ('free_delivery_threshold', '3000', 'Порог для бесплатной доставки'),
 ('working_hours', '9:00 - 21:00', 'Часы работы');
 
 -- Создание администратора (пароль: admin123 - в продакшене нужно изменить!)
 INSERT INTO users (username, email, password_hash, full_name, role) VALUES
-('admin', 'admin@samson-buket.ru', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Администратор', 'admin');
+('admin', 'l1m12345612@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Администратор', 'admin');
 -- Пароль по умолчанию: admin123 (в продакшене ОБЯЗАТЕЛЬНО изменить!)
 
 -- Примеры отзывов

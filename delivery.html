@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Доставка и оплата цветов Букеты & цветы. Доставка по Москве за 2 часа. Бесплатно от 5000 рублей.">
-    <title>Доставка и оплата - Букеты & цветы</title>
+        content="Доставка и оплата цветов Цветикс. Доставка по Москве за 2 часа. Бесплатно от 5000 рублей.">
+    <title>Доставка и оплата - Цветикс</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -28,50 +28,124 @@
 
     <!-- HEADER -->
     <header class="header">
-        <div class="container">
+        <div class="container-wide">
             <div class="header__inner">
-                <div class="header__logo">
-                    <a href="index.html">
-                        <a href="index.html" class="logo-text">Цветикс</a>
-                    </a>
+                <!-- Левая часть: бургер, логотип и телефон -->
+                <div class="header__left">
+                    <div class="header__brand">
+                        <button class="burger" id="burgerBtn" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <div class="header__logo">
+                            <a href="index.html">
+                                <span class="logo-text">Цветикс</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="tel:+79252944432" class="header__phone">+79252944432</a>
                 </div>
 
-                <nav class="header__nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </nav>
-
-                <div class="header__right">
-                    <div class="header__contacts">
-                        <a href="tel:+74955870707" class="header__phone">+7 (495) 587-07-07</a>
-                        <span class="header__hours">Работаем: 9:00 - 21:00</span>
+                <!-- Правая часть: часы работы и иконки -->
+                <div class="header__right header__right--home">
+                    <div class="header__info">
+                        <div class="header__schedule">
+                            <div class="schedule-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="schedule-text">
+                                <span>Работаем ежедневно</span>
+                                <span>24 часа в сутки</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="header__actions">
-                        <a href="cart.html" class="header__icon cart-link" title="Корзина">
+                    <div class="header__icons">
+                        <a href="favorites.html" class="icon-btn" title="Избранное">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
-                                <circle cx="9" cy="21" r="1" />
-                                <circle cx="20" cy="21" r="1" />
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
-                            <span class="cart-count">0</span>
+                            <span>Избранное</span>
+                        </a>
+                        <a href="cart.html" class="icon-btn cart-btn" title="Корзина">
+                            <div class="icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="9" cy="21" r="1" />
+                                    <circle cx="20" cy="21" r="1" />
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                </svg>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span>Корзина</span>
+                        </a>
+                        <a href="account.html" class="icon-btn" title="Войти">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>Войти</span>
                         </a>
                     </div>
-
-                    <button class="burger" aria-label="Меню">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Боковое меню (Sidebar) -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar__overlay" id="sidebarOverlay"></div>
+        <div class="sidebar__content">
+            <div class="sidebar__header">
+                <span class="logo-text">Цветикс</span>
+                <button class="sidebar__close" id="sidebarClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar__nav">
+                <ul class="sidebar__menu">
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li class="sidebar__submenu-parent">
+                        <a href="catalog.html">Каталог</a>
+                        <ul class="sidebar__submenu">
+                            <li><a href="catalog.html?category=bukety">Букеты</a></li>
+                            <li><a href="catalog.html?category=korziny">Цветы в корзине</a></li>
+                            <li><a href="catalog.html?category=flower-box">Цветы в Art-Box</a></li>
+                            <li><a href="catalog.html?category=kompozicii">Композиции</a></li>
+                            <li><a href="catalog.html?category=exclusive">Exclusive</a></li>
+                            <li><a href="catalog.html?category=wedding">Свадьба</a></li>
+                            <li><a href="catalog.html?category=gifts">Подарки</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="delivery.html">Доставка и оплата</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__contacts">
+                <a href="tel:+79252944432" class="sidebar__phone">+79252944432</a>
+                <span class="sidebar__hours">Работаем: 24/7</span>
+                <div class="sidebar__social">
+                    <a href="#" class="social-btn">WhatsApp</a>
+                    <a href="#" class="social-btn">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="page-hero page-hero--small">
@@ -175,11 +249,11 @@
                         <p>Вы можете забрать заказ самостоятельно из нашего магазина.</p>
                         <div class="sidebar-card__address">
                             <strong>Адрес:</strong><br>
-                            г. Москва, ул. Цветочная, д. 15
+                            г. Москва, ул. Енисейская, д. 15
                         </div>
                         <div class="sidebar-card__hours">
                             <strong>Время работы:</strong><br>
-                            Ежедневно с 9:00 до 21:00
+                            Ежедневно, 24/7
                         </div>
                         <p class="sidebar-card__note">При самовывозе скидка 5%</p>
                     </div>
@@ -308,13 +382,13 @@
                     Свяжитесь с нами — мы всегда рады помочь!
                 </p>
                 <div class="cta__buttons">
-                    <a href="tel:+74955870707" class="btn btn-primary btn-lg">
+                    <a href="tel:+79252944432" class="btn btn-primary btn-lg">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
-                        +7 (495) 587-07-07
+                        +79252944432
                     </a>
                     <a href="contacts.html" class="btn btn-outline btn-lg">Написать нам</a>
                 </div>
@@ -357,8 +431,8 @@
                 <div class="col col-3 col-md-6 col-sm-12">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__contacts">
-                        <li><a href="tel:+74955870707">+7 (495) 587-07-07</a></li>
-                        <li>Работаем: 9:00 - 21:00</li>
+                        <li><a href="tel:+79252944432">+79252944432</a></li>
+                        <li>Работаем: 24/7</li>
                     </ul>
                 </div>
             </div>

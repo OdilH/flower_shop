@@ -13,6 +13,9 @@
 ob_start();
 require_once 'db.php';
 require_once 'config.php';
+require_once 'rate_limiter.php';
+require_once 'security_logger.php';
+require_once 'cors.php'; // CORS policy
 ob_end_clean();
 
 header('Content-Type: application/json; charset=utf-8');
@@ -21,6 +24,9 @@ $method = $_SERVER['REQUEST_METHOD'];
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $db = Database::getInstance();
 $conn = $db->getConnection();
+
+// Инициализация логгера безопасности
+$securityLogger = new SecurityLogger($conn);
 
 try {
     switch ($action) {
@@ -62,12 +68,14 @@ try {
                 exit;
             }
 
-            // Проверка существования email
-            $email = $conn->real_escape_string($data['email']);
-            $checkSql = "SELECT id FROM customers WHERE email = '$email'";
-            $result = $conn->query($checkSql);
+            // Проверка существования email (ИСПРАВЛЕНО: используем prepared statement)
+            $stmt = $conn->prepare("SELECT id FROM customers WHERE email = ?");
+            $stmt->bind_param('s', $data['email']);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
+                $stmt->close();
                 http_response_code(400);
                 echo json_encode([
                     'success' => false,
@@ -75,12 +83,14 @@ try {
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }
+            $stmt->close();
 
             // Хеширование пароля
             $password_hash = password_hash($data['password'], PASSWORD_DEFAULT);
-            $first_name = $conn->real_escape_string($data['first_name']);
-            $last_name = !empty($data['last_name']) ? $conn->real_escape_string($data['last_name']) : '';
-            $phone = !empty($data['phone']) ? $conn->real_escape_string($data['phone']) : '';
+            $first_name = $data['first_name'];
+            $last_name = !empty($data['last_name']) ? $data['last_name'] : '';
+            $phone = !empty($data['phone']) ? $data['phone'] : '';
+            $email = $data['email'];
 
             // Создание пользователя
             $stmt = $conn->prepare("INSERT INTO customers (email, password_hash, first_name, last_name, phone) VALUES (?, ?, ?, ?, ?)");
@@ -127,13 +137,30 @@ try {
                 exit;
             }
 
-            $email = $conn->real_escape_string($data['email']);
+            // Проверка rate limiting (НОВОЕ)
+            $rateLimiter = new RateLimiter($conn);
+            if ($rateLimiter->isBlocked($data['email'])) {
+                $remainingTime = $rateLimiter->getRemainingBlockTime($data['email']);
+                $minutes = ceil($remainingTime / 60);
+                $securityLogger->logRateLimitBlock($data['email']);
+                http_response_code(429);
+                echo json_encode([
+                    'success' => false,
+                    'error' => "Превышено количество попыток входа. Попробуйте снова через {$minutes} минут."
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
 
-            // Поиск пользователя
-            $sql = "SELECT * FROM customers WHERE email = '$email' AND active = TRUE";
-            $result = $conn->query($sql);
+            // Поиск пользователя (ИСПРАВЛЕНО: prepared statement)
+            $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ? AND active = TRUE");
+            $stmt->bind_param('s', $data['email']);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             if ($result->num_rows === 0) {
+                $stmt->close();
+                $rateLimiter->recordAttempt($data['email']);
+                $securityLogger->logFailedLogin($data['email'], 'User not found');
                 http_response_code(401);
                 echo json_encode([
                     'success' => false,
@@ -144,8 +171,12 @@ try {
 
             $customer = $result->fetch_assoc();
 
+            $stmt->close();
+
             // Проверка пароля
             if (!password_verify($data['password'], $customer['password_hash'])) {
+                $rateLimiter->recordAttempt($data['email']);
+                $securityLogger->logFailedLogin($data['email'], 'Invalid password');
                 http_response_code(401);
                 echo json_encode([
                     'success' => false,
@@ -154,8 +185,15 @@ try {
                 exit;
             }
 
-            // Обновляем last_login
-            $conn->query("UPDATE customers SET last_login = NOW() WHERE id = " . $customer['id']);
+            // Очищаем попытки входа после успешного входа
+            $rateLimiter->clearAttempts($data['email']);
+            $securityLogger->logSuccessfulLogin($customer['id'], $data['email']);
+
+            // Обновляем last_login (ИСПРАВЛЕНО: prepared statement)
+            $stmt = $conn->prepare("UPDATE customers SET last_login = NOW() WHERE id = ?");
+            $stmt->bind_param('i', $customer['id']);
+            $stmt->execute();
+            $stmt->close();
 
             // Создание новой сессии
             $token = bin2hex(random_bytes(32));
@@ -189,8 +227,11 @@ try {
             $token = getBearerToken();
 
             if ($token) {
-                $token = $conn->real_escape_string($token);
-                $conn->query("DELETE FROM customer_sessions WHERE token = '$token'");
+                // ИСПРАВЛЕНО: prepared statement
+                $stmt = $conn->prepare("DELETE FROM customer_sessions WHERE token = ?");
+                $stmt->bind_param('s', $token);
+                $stmt->execute();
+                $stmt->close();
             }
 
             echo json_encode([
@@ -253,10 +294,8 @@ function getBearerToken()
         }
     }
 
-    // Также проверяем GET параметр (для удобства тестирования)
-    if (isset($_GET['token'])) {
-        return $_GET['token'];
-    }
+    // ИСПРАВЛЕНО: Удалена поддержка токена в GET параметрах для безопасности
+    // Токен должен передаваться ТОЛЬКО через Authorization header
 
     return null;
 }
@@ -272,19 +311,25 @@ function getCurrentCustomer($conn)
         return null;
     }
 
-    $token = $conn->real_escape_string($token);
-
+    // ИСПРАВЛЕНО: prepared statement
     $sql = "SELECT c.* FROM customers c 
             JOIN customer_sessions s ON c.id = s.customer_id 
-            WHERE s.token = '$token' 
+            WHERE s.token = ? 
             AND s.expires_at > NOW() 
             AND c.active = TRUE";
 
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $token);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
+        $stmt->close();
         return null;
     }
 
-    return $result->fetch_assoc();
+    $customer = $result->fetch_assoc();
+    $stmt->close();
+
+    return $customer;
 }

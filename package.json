@@ -1,7 +1,7 @@
 ﻿{
   "name": "samson-buket",
   "version": "1.0.0",
-  "description": "Сайт доставки цветов Букеты & цветы",
+  "description": "Сайт доставки цветов Цветикс",
   "main": "index.html",
   "scripts": {
     "dev": "webpack --mode development --watch",
